@@ -1,0 +1,63 @@
+{% extends "master.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css\cadastro.css' %}">
+<body>
+    <div class="divcadastro">
+    
+        {% if form.errors %}
+            <div class="errors">
+                <p> Corrija os erros a seguir. </p>
+            </div>
+        {% endif %}
+        
+        {% if messages %}
+        <div class="sucess">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <div class="wrapper">
+            <h1>Cadastro</h1>
+            
+            <form action="{% url 'usuarios:createusuario' %}" method="post">
+                
+                {% csrf_token %}
+                {% for field in form %}
+
+                    <p><label for="{{field.id_for_label}}" > {{field.label}} :</label>
+                    {{field}} <br>
+                    <div class="help_text">
+                        {% if field.help_text %}
+                            {{ field.help_text }}
+                        {% endif %}
+                    </div>
+                    <p>
+                    
+                    <div class="errors_text">
+                    {% if field.errors %}
+                            {{field.errors}}
+                    {% endif %}
+                    </div>
+                    
+                {% endfor %}
+
+                <button type="submit">Cadastrar</button>
+                <p> Já possui uma conta? <a href="{% url 'usuarios:login' %}">Login aqui!</a></p>
+                
+            </form>
+        </div>
+    </div>
+
+    {% comment %}
+        {{ form }}
+    {% endcomment %}
+
+</body>
+
+{% endblock %}
