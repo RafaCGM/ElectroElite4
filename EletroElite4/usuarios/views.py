@@ -4,7 +4,8 @@ from django.http import Http404
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 def view_login(request):
     if request.POST:
@@ -80,5 +81,15 @@ def view_create_usuario(request):
 
     return redirect('usuarios:cadastro', firstacess = 1)
 
+@login_required(login_url='usuarios:login', redirect_field_name ='next')
 def view_area_usuario(request):
     return render(request, 'pages/areausuario.html')
+
+@login_required(login_url='usuarios:login', redirect_field_name ='next')
+def view_logout(request):
+    if not request.POST:
+        redirect('usuarios:login')
+
+    logout(request)
+
+    return redirect('usuarios:login')

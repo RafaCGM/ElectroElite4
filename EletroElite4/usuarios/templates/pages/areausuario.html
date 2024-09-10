@@ -4,9 +4,26 @@
 
 {% block content %}
 
-<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css\login.css' %}">
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css\areausuario.css' %}">
 <body>
     <h1 style="color: white;">USER AREA </h1>
-    <h2> essa é a area de usuário </h2>
+    
+    {% if messages %}
+    <div class="sucess">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div> Você está logado como: {{ request.user.username }} </div>
+
+    <div>
+        <form action="{% url 'usuarios:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit"> Logout </button>
+        </form>
+    </div>
+
 
 {% endblock %}
