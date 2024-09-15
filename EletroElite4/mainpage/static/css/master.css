@@ -95,19 +95,28 @@ input{
 /*=============== FOOTER ===============*/
 
 footer {
-    margin-top: 10rem;
-    width: 100%;
     background-color: black;
+    padding: 50px;
+    width: 100%;
 }
 
-.footer_data {
+.footer_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20rem;
+}
+
+.footer_texto {
     color: white;
 }
 
-.footer_data p{
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-
+.footer_icons{
+    color: white;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
 }
 
 /* Navegação para dispositivos móveis */

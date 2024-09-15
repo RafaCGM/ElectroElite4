@@ -4,10 +4,12 @@ from django.http import Http404
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, login as auth_login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
 
 def view_login(request):
+
     if request.POST:
         form_data = request.POST
         form = AcessForm(form_data)
@@ -36,6 +38,12 @@ def view_acess_login(request):
             if check_p:
                 messages.success(request, 'Login realizado com sucesso!')
                 login(request, authenticated_user)
+
+                if 'login_count' in request.session:
+                    request.session['login_count'] += 1
+                else:
+                    request.session['login_count'] = 1
+                
                 return redirect('usuarios:area_usuario')
             else:
                 messages.error(request, 'Login ou senha incorretos.')
@@ -83,7 +91,8 @@ def view_create_usuario(request):
 
 @login_required(login_url='usuarios:login', redirect_field_name ='next')
 def view_area_usuario(request):
-    return render(request, 'pages/areausuario.html')
+    login_count = request.session.get('login_count')
+    return render(request, 'pages/areausuario.html', {'login_count': login_count})
 
 @login_required(login_url='usuarios:login', redirect_field_name ='next')
 def view_logout(request):

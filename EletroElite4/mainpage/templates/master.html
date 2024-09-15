@@ -45,10 +45,10 @@
             </div>
 
             <div class="nav_itens">
-                <a> {{ user }} </a>
                 <a href="" class="fa-solid fa-cart-shopping"></a>
                 <a href="#" class="fa-solid fa-magnifying-glass"></a>
                 <a href="{% url 'usuarios:login' %}" class="fa-solid fa-user"></a>
+                <a href="{% url 'usuarios:area_usuario'%}"> {{ user }} </a>
             </div>
 
 
@@ -69,11 +69,18 @@
 
     <footer class="footer">
         <div class="footer_data container">
-            <p>Outras formas de comprar: encontre uma Loja ElectroElite4 ou revendedor ElectroElite na sua região. Ou ligue para 0800-761-0867. Areia Branca, 160, 7º andar, Canguaretama, RN. CEP: 59190-000.</p>
-            <p>Os Serviços de Mídia da ElectroElite4 são fornecidos pela ElectroElite Services LATAM LLC.</p>
-            <p>Copyright © 2023 ElectroElite Inc. Todos os direitos reservados. Electro Computer Brasil Ltda. CNPJ: 00.823.019/0002-66</p>
-            <p>Política de Privacidade | Política de vendas | Avisos legais | Mapa do site</p>
+            <div class="footer_texto">
+                <h1>ELECTROELITE4</h1>
+                <p>© 2024 ElectroElite4 - Todos os direitos reservados.</p>
+            </div>
+
+            <div class="footer_icons">
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-discord"></i>
+            </div>   
         </div>
+       
     </footer>
 
     <!--==================== SCRIPT ====================-->

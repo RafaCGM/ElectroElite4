@@ -182,6 +182,7 @@ input{
 .smartphones_data {
     grid-template-columns: repeat(4,350px);
     justify-content: center;
+    margin-bottom: 10rem;
 }
 
 .smartphone_card {
