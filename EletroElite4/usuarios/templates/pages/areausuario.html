@@ -42,7 +42,42 @@
                         <p><strong>Quantidade de Logins:</strong> {{ login_count }}</p>
                     </div>
                 </div>
-            </section>        
+            </section>
+
+            <section class="gerenciador" id="profile">
+                <h2>Gerenciador</h2>
+                    <div class="gerenciador_data">
+                        
+                        <div class="profile-info">
+                            <div class="info-details">
+                                <h2>Produtos</h2>
+                                <a href="{% url 'gerenciador:cadproduto' %}"> Adicionar produto</a> <br>
+                                <a href=""> Editar produto</a> <br>
+                                <a href=""> Remover produto</a>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-info">          
+                            <div class="info-details">
+                                <h2>Pedidos</h2>
+                                <a href="{% url 'gerenciador:cadpedido' %}"> Adicionar pedido</a> <br>
+                                <a href=""> Editar pedido</a> <br>
+                                <a href=""> Remover pedido</a>
+                            </div>
+                        </div>
+
+                        <div class="profile-info">
+                            <div class="info-details">
+                                <h2>Itens Pedidos</h2>
+                                <a href="{% url 'gerenciador:caditenspedidos' %}"> Adicionar Itens Pedidos</a> <br>
+                                <a href=""> Editar Itens Pedidos</a> <br>
+                                <a href=""> Remover Itens Pedidos</a>
+                            </div>
+                        </div>
+
+                    </div>       
+            </section>
+
         </main>
     </div>
 

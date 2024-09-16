@@ -96,15 +96,14 @@ input{
 
 footer {
     background-color: black;
-    padding: 50px;
+    padding: 2rem 0;
     width: 100%;
 }
 
 .footer_data{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20rem;
 }
 
 .footer_texto {

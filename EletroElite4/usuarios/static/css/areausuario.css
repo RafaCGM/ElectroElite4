@@ -8,6 +8,12 @@
     font-family: "Poppins", sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: #1098f3;
+}
+
+
 /* Corpo do documento */
 body {
     background-image: url('../media/Fundo.png');
@@ -115,6 +121,15 @@ body {
     display: inline-block;
     width: 150px; /* Ajuste conforme necessário */
     font-weight: 600;
+}
+
+.gerenciador{
+    padding-top: 3rem;
+}
+
+.gerenciador_data {
+    display: flex;
+    gap: 10rem;
 }
 
 /* Responsividade */
