@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../media/Fundo.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.divlogin{
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.wrapper {
+    width: 420px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 20px 40px;
+    text-align: center; /* Adicionei isso para centralizar o conteúdo */
+}
+
+.wrapper h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.mensagens{
+    background-color: #1098f3;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0;
+    color: white;
+}
