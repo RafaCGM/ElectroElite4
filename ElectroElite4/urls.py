@@ -18,12 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 
-from usuarios.views import *
-from gerenciador.views import *
+from apps.core.views import *
+from apps.BancoDados.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('mainpage.urls')),
-    path('user/', include('usuarios.urls')),
-    path('crud/', include('gerenciador.urls')),
+    path('', include('apps.core.urls')),
+    path('user/', include('apps.core.urls')),
+    path('crud/', include('apps.BancoDados.urls')),
 ]

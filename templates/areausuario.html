@@ -1,0 +1,93 @@
+{% load static %}
+
+{% block content %}
+
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css\areausuario.css' %}">
+<body>
+    <!--
+    
+    <h1 style="color: white;">USER AREA </h1>
+    
+    {% if messages %}
+        <div class="sucess">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div> Você está logado como: {{ request.user.username }} </div>
+
+    -->
+
+    <div class="container">
+        <nav class="sidebar">
+            <h1>ELECTROELITE4</h1>
+            <ul>
+                <li><a href="/">Voltar a página inicial</a></li>
+                <li><a href="#profile">Perfil</a></li>
+                <li><a href="#settings">Configurações</a></li>
+                <li><a href="#messages">Mensagens</a></li>
+                <li><a href="{% url 'usuarios:logout' %}">Sair</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <section id="profile">
+                <h2>Perfil do Usuário</h2>
+                <div class="profile-info">
+                    <div class="info-details">
+                        <p><strong>Nome de Usuário:</strong> {{ user.username }} </p>
+                        <p><strong>Nome e sobrenome:</strong> {{ user.first_name }} {{ user.last_name }} </p>
+                        <p><strong>E-mail:</strong> {{ user.email }} </p>
+                        <p><strong>Quantidade de Logins:</strong> {{ login_count }}</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gerenciador" id="profile">
+                <h2>Gerenciador</h2>
+                    <div class="gerenciador_data">
+                        
+                        <div class="profile-info">
+                            <div class="info-details">
+                                <h2>Produtos</h2>
+                                <a href="{% url 'bancodados:cadproduto' %}"> Adicionar produto</a> <br>
+                                <a href=""> Editar produto</a> <br>
+                                <a href=""> Remover produto</a>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-info">          
+                            <div class="info-details">
+                                <h2>Pedidos</h2>
+                                <a href="{% url 'bancodados:cadpedido' %}"> Adicionar pedido</a> <br>
+                                <a href=""> Editar pedido</a> <br>
+                                <a href=""> Remover pedido</a>
+                            </div>
+                        </div>
+
+                        <div class="profile-info">
+                            <div class="info-details">
+                                <h2>Itens Pedidos</h2>
+                                <a href="{% url 'bancodados:caditenspedidos' %}"> Adicionar Itens Pedidos</a> <br>
+                                <a href=""> Editar Itens Pedidos</a> <br>
+                                <a href=""> Remover Itens Pedidos</a>
+                            </div>
+                        </div>
+
+                    </div>       
+            </section>
+
+        </main>
+    </div>
+
+    <!--
+    <div>
+        <form action="{% url 'usuarios:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit"> Logout </button>
+        </form>
+    </div>
+    -->
+
+{% endblock %}

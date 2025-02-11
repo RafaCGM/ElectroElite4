@@ -1,0 +1,95 @@
+{% extends "base/master.html" %}
+{% load static %}
+{% block content %}
+
+<link rel='stylesheet' type='text/css' media='screen' href="{% static 'css\home.css' %}">
+<body>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="Home" style="background-image: url('static/media/Fundo.png')">
+
+            <div class="home_data container">
+                <img class="home_img" src="{% static '\media\Logo.png' %}" alt="logo">
+            </div>
+
+        </section>
+
+        <!--==================== GALAXYS23 ====================-->
+
+        <section class="galaxy">
+            <h2 class="section_titulo">DESTAQUE</h2>
+                   
+            <div class="galaxy_data container">
+                <div class="galaxy_texto">
+                    <h2>Galaxy S23 Ultra</h2>
+                    <p>Para você que está a procura de um novo smartphone e dar aquele upgrade no seu dia a dia no trabalho ou para navegar nas redes sociais, precisa conhecer o Samsung Galaxy S23 Ultra. É o smartphone top de linha para quem quer muito desempenho e câmera de arrasar.</p>
+                    <a href="#" class="galaxy_btn">Comprar</a>
+                </div>
+
+                <div class="galaxy_img">
+                    <img src="{% static '\media\s23.png' %}" alt="galaxys23">
+                </div>
+
+            </div>
+        </section>
+
+        <!--==================== MACBOOK PRO ====================-->
+
+        <section class="macbook">
+
+            <div class="macbook_data container">
+                <h1>Macbook PRO</h1>
+                <h2>Arrepia. Até na Beleza.</h2>
+                <img src="{% static '\media\macbook.png' %}"v alt="">
+                <p>R$ 29.999,00 à vista ou 10x de 2.999,90</p>
+                <a href="" class="macbook_btn">Comprar</a>
+            </div>
+
+        </section>
+
+        <!--==================== SMARTPHONES ====================-->
+
+        <section class="smartphones">
+
+            <h2 class="section_titulo">SMARTPHONES</h2>
+
+            <div class="smartphones_data grid">
+
+                <div class="smartphone_card">
+                    <img class="smartphone_img" src="{% static '\media\1.png' %}" alt="Iphone 11">
+                    <h2 class="smartphone_titulo">Iphone 11</h2>
+                    <p class="smartphone_subtitulo">256GB/6 - Lacrado - 1 ano de garantia Apple</p>
+                    <p class="smartphone_subtitulo2">R$ 7.990,00 à vista ou 12x de R$ 772,63</p>
+                    <a href="" class="macbook_btn">Comprar</a>
+                </div>
+
+                <div class="smartphone_card">
+                    <img class="smartphone_img" src="{% static '\media\2.webp' %}" alt="Galaxy S24">
+                    <h2 class="smartphone_titulo">Galaxy S24</h2>
+                    <p class="smartphone_subtitulo">256GB/6 - Lacrado - 1 ano de garantia Samsung</p>
+                    <p class="smartphone_subtitulo2">R$ 3.990,00 à vista ou 12x de R$ 380,63</p>
+                    <a href="" class="macbook_btn">Comprar</a>
+                </div>
+
+                <div class="smartphone_card">
+                    <img class="smartphone_img" src="{% static '\media\3.webp' %}" alt="F6 Pro">
+                    <h2 class="smartphone_titulo">Xiaomi Poco F6 PRO </h2>
+                    <p class="smartphone_subtitulo">256GB/6 - Lacrado - 1 ano de garantia Xiaomi</p>
+                    <p class="smartphone_subtitulo2">R$ 1.990,00 à vista ou 12x de R$ 180,63</p>
+                    <a href="" class="macbook_btn">Comprar</a>
+                </div>
+
+                <div class="smartphone_card">
+                    <img class="smartphone_img" src="{% static '\media\4.png' %}" alt="Iphone 13 Pro">
+                    <h2 class="smartphone_titulo">Iphone 13 Pro</h2>
+                    <p class="smartphone_subtitulo">256GB/6 - Lacrado - 1 ano de garantia Apple</p>
+                    <p class="smartphone_subtitulo2">R$ 4.990,00 à vista ou 12x de R$ 450,63</p>
+                    <a href="" class="macbook_btn">Comprar</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+{% endblock %}
